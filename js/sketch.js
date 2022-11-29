@@ -33,6 +33,32 @@ function playSynth2(){
 
 }
 
+function playSynth3(){
+    userStartAudio();
+
+    var dur = 1.5;
+    var time = 0;
+    var vel = 0.1;
+    
+    polySynth.play('G4', vel, 0, dur);
+    polySynth.play('C3', vel, time += 1/3, dur);
+    polySynth.play('G2', vel, time += 1/3, dur);
+
+}
+
+function playSynth4(){
+    userStartAudio();
+
+    var dur = 1.5;
+    var time = 0;
+    var vel = 0.1;
+    
+    polySynth.play('G4', vel, 0, dur);
+    polySynth.play('C3', vel, time += 1/3, dur);
+    polySynth.play('G3', vel, time += 1/3, dur);
+
+}
+
 function keyPressed() {
     if (keyCode === LEFT_ARROW){
         playSynth1();
@@ -40,6 +66,12 @@ function keyPressed() {
     } else if(keyCode === RIGHT_ARROW){
         playSynth2();
         fill(255, 0, 255);
+    } else if(keyCode === UP_ARROW) {
+        playSynth3();
+        fill(0, 255, 255);
+    } else if(keyCode === DOWN_ARROW) {
+        playSynth4();
+        fill(0, 0, 0);
     }
 }
 
